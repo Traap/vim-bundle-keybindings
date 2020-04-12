@@ -84,3 +84,6 @@ map <leader><leader>s :call RunNearestSpec()<CR>
 map <leader><leader>l :call RunLastSpec()<CR>
 map <leader><leader>a :call RunAllSpecs()<CR>
 " -------------------------------------------------------------------------- }}}
+" {{{ Wipeout all buffers.
+nnoremap ]w :call Wipeout()<cr>
+" -------------------------------------------------------------------------- }}}
