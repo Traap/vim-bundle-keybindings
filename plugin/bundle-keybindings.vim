@@ -8,6 +8,11 @@ nnoremap <leader>q :Bdelete<cr>
 nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Clean trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+nnoremap <leader>wo :%bwipeout<cr>
+nnoremap <leader>wr :%s/\r//g<cr>
+" -------------------------------------------------------------------------- }}}
 " {{{ Delete line and more
 "Delete line
 map - dd
@@ -31,6 +36,15 @@ map <m-j> :resize +1<cr>
 map <m-k> :resize -1<cr>
 map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Copy and Paste
+" Normal mode copy & paste
+nnoremap cc "+y
+nnoremap cv "+p
+
+" Visual mode copy & paste
+vnoremap cc "+y
+vnoremap cv "+p
+" -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.
 vmap  <expr>  <LEFT>   DVB_Drag('left')
@@ -46,6 +60,9 @@ nnoremap <leader>HH :silent vert bo help<cr>
 " {{{ Docbld
 nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
 nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
 " -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -90,6 +107,11 @@ nnoremap <leader>ga :Giadd<cr>
 " {{{ Helptags
 noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Indent/dedent/autoindent what you just pasted.
+nnoremap <lt>> V`]<
+nnoremap ><lt> V`]>
+nnoremap =- V`]=
+" ------------------------------------------------------------------------- }}}
 " {{{ incsearch.vim
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -108,9 +130,24 @@ inoremap <c-f> <c-x><c-f>
 inoremap <c-]> <c-x><c-]>
 inoremap <c-l> <c-x><c-l>
 " -------------------------------------------------------------------------- }}}
+" {{{ Join line
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" Join an entire paragraph
+nnoremap <leader>J myvipJ`ygq<CR>
+" -------------------------------------------------------------------------- }}}
+" {{{ Marks and Quotes
+" noremap ' `
+" noremap æ '
+" noremap ` <C-^>
+" -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
+" -------------------------------------------------------------------------- }}}
+" {{{ Obfuscate screen contents
+nnoremap <F1> mzggg?G`z
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 nmap ; :
@@ -122,9 +159,39 @@ map <leader><leader>s :call RunNearestSpec()<CR>
 map <leader><leader>l :call RunLastSpec()<CR>
 map <leader><leader>a :call RunAllSpecs()<CR>
 " -------------------------------------------------------------------------- }}}
+" {{{ Select (charwise) the contents of the current line, excluding indentation.
+nnoremap vv ^vg_
+" -------------------------------------------------------------------------- }}}
+" {{{ Select entire buffer
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
+" -------------------------------------------------------------------------- }}}
+" {{{ Source lines
+vnoremap <leader>S y:@"<CR>
+nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Sort lines
+nnoremap <leader>s vip:!sort<cr>
+vnoremap <leader>s :!sort<cr>
+vnoremap <leader>u :sort u<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Split line (sister to [J]oin lines)
+" The normal use of S is covered by cc, so don't worry about shadowing it.
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+" -------------------------------------------------------------------------- }}}
 " {{{ Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Toggle search results
+noremap <silent><leader><space> :set hlsearch!<CR>
+" -------------------------------------------------------------------------- }}}
+" {{{ Use shift-key versus control-key when I'm lazy.
+nnoremap B <c-b>
+nnoremap F <c-f>
+" -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 nnoremap ]w :call Wipeout()<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Zoom to head level.
+nnoremap zh mzzt10<c-u>
 " -------------------------------------------------------------------------- }}}
