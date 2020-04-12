@@ -14,12 +14,6 @@ map <m-j> :resize +1<cr>
 map <m-k> :resize -1<cr>
 map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ Escape replacement
-" inoremap ,, <esc>
-" inoremap <esc> <nop>
-" vnoremap ,, <esc>
-" vnoremap <esc> <nop>
-" -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.
 vmap  <expr>  <LEFT>   DVB_Drag('left')
@@ -50,6 +44,15 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gP :Gpull<cr>
 nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Fuzzy file finders
+if has('unix')
+  if has('nvim')
+    nnoremap <silent> <leader>ff :FZF<CR>
+  else
+    nnoremap <silent> <leader>ff :FZF<CR>
+  endif
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
 nnoremap <leader>gi :Gissues<cr>
