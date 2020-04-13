@@ -207,6 +207,9 @@ nnoremap F <c-f>
 " {{{ Wipeout all buffers.
 nnoremap ]w :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Yank visually selected test and search for it in any file.
+vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
+" ------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>
 " -------------------------------------------------------------------------- }}}
