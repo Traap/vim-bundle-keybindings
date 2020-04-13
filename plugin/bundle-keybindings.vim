@@ -146,12 +146,27 @@ nnoremap <leader>J myvipJ`ygq<CR>
 nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " -------------------------------------------------------------------------- }}}
-" {{{ Obfuscate screen contents
-nnoremap <F1> mzggg?G`z
-" -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 nmap ; :
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" -------------------------------------------------------------------------- }}}
+" {{{ Quick editing of my personalization files.
+nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
+nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
+nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
+nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
+nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
+nnoremap <leader>ep :e ~/git/vim/plug.vim<cr>
+nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>.  :e.<cr>
+
+nnoremap <leader>ma :e ~/git/dotfiles/my_aliases<cr>
+nnoremap <leader>mc :e ~/git/dotfiles/my_completions<cr>
+nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
+nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
+nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
+nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ rspec
 map <leader><leader>t :call RunCurrentSpecFile()<CR>
