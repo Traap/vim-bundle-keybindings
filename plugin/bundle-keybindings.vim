@@ -2,6 +2,7 @@
 if exists('g:loaded_bundle_keybindings')
   finish
 endif
+let g:loaded_bundle_keybindings=1
 " -------------------------------------------------------------------------- }}}
 " {{{ Bbye (Buffer Bye) for Vim
 nnoremap <leader>q :Bdelete<cr>
