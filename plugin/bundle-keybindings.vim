@@ -95,6 +95,19 @@ if has('unix')
   endif
 endif
 " -------------------------------------------------------------------------- }}}
+" {{{ Grammarous
+nnoremap <leader>gC <plug>(grammarous-close-info-window)
+nnoremap <leader>ge <plug>(grammarous-move-to-next-error)
+nnoremap <leader>ge <plug>(grammarous-move-to-previous-error)
+nnoremap <leader>gF <plug>(grammarous-fixall)
+nnoremap <leader>gf <plug>(grammarous-fixit)
+nnoremap <leader>gg :GrammarousCheck<cr>
+nnoremap <leader>gM <plug>(grammarous-move-to-info-window)
+nnoremap <leader>gm <plug>(grammarous-open-info-window)
+nnoremap <leader>gR <plug>(grammarous-remove-error)
+nnoremap <leader>gr <plug>(grammarous-reset)
+nnoremap <leader>gx <plug>(grammarous-disable-rule)
+" -------------------------------------------------------------------------- }}}
 " {{{ LMGTFY : Let Me Google That For You 
 nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
 nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
