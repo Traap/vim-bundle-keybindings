@@ -39,7 +39,7 @@ map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 " Normal mode copy & paste
-nnoremap cc "+y
+nnoremap cc ggVGg_"+y        " See vaa keybindings below.
 nnoremap cv "+p
 
 " Visual mode copy & paste
