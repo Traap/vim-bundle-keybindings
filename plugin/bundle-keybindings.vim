@@ -38,13 +38,21 @@ map <m-k> :resize -1<cr>
 map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
-" Normal mode copy & paste
-nnoremap cc ggVGg_"+y        " See vaa keybindings below.
-nnoremap cv "+p
+if has('nvim') 
+  " Copy
+  nnoremap <silent>cc ggVGg_"+y        " See vaa keybindings below.
+  vnoremap <silent>cc "+y
 
-" Visual mode copy & paste
-vnoremap cc "+y
-vnoremap cv "+p
+  " Paste
+  nnoremap <silent>cv "+p
+else
+  " Copy
+  nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>
+  vnoremap <silent>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
+
+  " Paste 
+  nnoremap <silent>cv :r!xsel -o -b<cr>
+ endif 
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.
