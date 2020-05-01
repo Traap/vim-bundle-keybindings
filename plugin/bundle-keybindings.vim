@@ -47,7 +47,7 @@ if has('nvim')
   nnoremap <silent>cv "+p
 else
   " Copy
-  nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>
+  nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
   vnoremap <silent>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
 
   " Paste 
