@@ -1,4 +1,4 @@
-" {{{ bundle-keybindings.vim 
+" {{{ bundle-keybindings.vim
 if exists('g:loaded_bundle_keybindings')
   finish
 endif
@@ -31,14 +31,14 @@ vnoremap <c-s> :s/
 " Map O to :only so that only one view is visable.
 nnoremap <silent> O :only<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ Buffer resize 
+" {{{ Buffer resize
 map <m-h> :vertical resize -1<cr>
 map <m-j> :resize +1<cr>
 map <m-k> :resize -1<cr>
 map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
-if has('nvim') 
+if has('nvim')
   " Copy
   nnoremap <silent>cc ggVGg_"+y        " See vaa keybindings below.
   vnoremap <silent>cc "+y
@@ -50,9 +50,9 @@ else
   nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
   vnoremap <silent>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
 
-  " Paste 
+  " Paste
   nnoremap <silent>cv :r!xsel -o -b<cr>
- endif 
+ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.
@@ -96,11 +96,7 @@ nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders
 if has('unix')
-  if has('nvim')
-    nnoremap <silent> <leader>ff :FZF<CR>
-  else
-    nnoremap <silent> <leader>ff :FZF<CR>
-  endif
+  nnoremap <silent> <leader>ff :FZF<CR>
 endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Grammarous
@@ -116,7 +112,7 @@ nnoremap <leader>gR <plug>(grammarous-remove-error)
 nnoremap <leader>gr <plug>(grammarous-reset)
 nnoremap <leader>gx <plug>(grammarous-disable-rule)
 " -------------------------------------------------------------------------- }}}
-" {{{ LMGTFY : Let Me Google That For You 
+" {{{ LMGTFY : Let Me Google That For You
 nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
 nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
 xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
@@ -148,8 +144,8 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 " -------------------------------------------------------------------------- }}}
 " {{{ Insert Mode Completion
-inoremap <c-f> <c-x><c-f>
 inoremap <c-]> <c-x><c-]>
+inoremap <c-f> <c-x><c-f>
 inoremap <c-l> <c-x><c-l>
 " -------------------------------------------------------------------------- }}}
 " {{{ Join line
