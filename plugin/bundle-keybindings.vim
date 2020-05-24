@@ -215,6 +215,22 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 " {{{ Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Tmux Runner
+" Below are the suggested Tmux Runner default mappings.  I decided to explicitly
+" reference them with defaults before I start changing them.
+nnoremap <leader>rr  :VtrResizeRunner<cr>
+nnoremap <leader>ror :VtrReorientRunner<cr>
+nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
+nnoremap <leader>sf  :VtrSendFile!<cr>
+nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
+nnoremap <leader>or  :VtrOpenRunner<cr>
+nnoremap <leader>kr  :VtrKillRunner<cr>
+nnoremap <leader>fr  :VtrFocusRunner<cr>
+nnoremap <leader>dr  :VtrDetachRunner<cr>
+nnoremap <leader>ar  :VtrReattachRunner<cr>
+nnoremap <leader>cr  :VtrClearRunner<cr>
+nnoremap <leader>fc  :VtrFlushCommand<cr>
+" -------------------------------------------------------------------------- }}}
 " {{{ Toggle search results
 noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
