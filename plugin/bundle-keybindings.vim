@@ -32,10 +32,10 @@ vnoremap <c-s> :s/
 nnoremap <silent> O :only<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize
-map <m-h> :vertical resize -1<cr>
-map <m-j> :resize +1<cr>
-map <m-k> :resize -1<cr>
-map <m-l> :vertical resize +1<cr>
+map <space>h :vertical resize -1<cr>
+map <space>j :resize +1<cr>
+map <space>k :resize -1<cr>
+map <space>l :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 if has('nvim')
