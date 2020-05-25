@@ -238,6 +238,9 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 nnoremap B <c-b>
 nnoremap F <c-f>
 " -------------------------------------------------------------------------- }}}
+" {{{ vim-plug 
+command! PU PlugUpdate | PlugUpgrade
+" -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 nnoremap ]w :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
