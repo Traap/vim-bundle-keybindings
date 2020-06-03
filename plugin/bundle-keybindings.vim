@@ -12,7 +12,7 @@ nnoremap <leader>X :bdelete<cr>
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
-nnoremap <leader>wr :%s/\r//g<cr>
+      nnoremap <leader>wr :%s/\r//g<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Delete line and more
 "Delete line
@@ -32,10 +32,10 @@ vnoremap <c-s> :s/
 nnoremap <silent> O :only<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize
-map <space>h :vertical resize -1<cr>
-map <space>j :resize +1<cr>
-map <space>k :resize -1<cr>
-map <space>l :vertical resize +1<cr>
+map <silent>\H :resize -1<cr>
+map <silent>\J :vertical resize -1<cr>
+map <silent>\K :vertical resize +1<cr>
+map <silent>\L :resize +1<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 if has('nvim')
