@@ -318,6 +318,11 @@ nnoremap <leader>kvim  :!tmux kill-session -t vim<cr>
 nnoremap <leader>kwork :!tmux kill-session -t work<cr>
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Toggle Post Buffer 
+
+nnoremap <leader>pb :call TogglePostBuffer()<cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Toggle search results
 
 noremap <silent><leader><space> :set hlsearch!<CR>
