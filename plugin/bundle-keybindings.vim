@@ -8,16 +8,18 @@ let g:loaded_bundle_keybindings=1
 " -------------------------------------------------------------------------- }}}
 " {{{ Bbye (Buffer Bye) for Vim
 
-nnoremap <leader>q :Bdelete<cr>
-nnoremap <leader>Q :bufdo :Bdelete<cr>
-nnoremap <leader>X :bdelete<cr>
+if exists('g:loaded_bbye')
+  nnoremap <leader>q :Bdelete<cr>
+  nnoremap <leader>Q :bufdo :Bdelete<cr>
+  nnoremap <leader>X :bdelete<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
-      nnoremap <leader>wr :%s/\r//g<cr>
+nnoremap <leader>wr :%s/\r//g<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Delete line and more
@@ -26,7 +28,7 @@ nnoremap <leader>wo :%bwipeout<cr>
 map - dd
 
 " Save file
-noremap s :w<cr>
+" noremap s :w<cr>
 
 " Reformat lines.
 vnoremap Q gq
@@ -37,6 +39,16 @@ vnoremap <c-s> :s/
 
 " Map O to :only so that only one view is visable.
 nnoremap <silent> <leader>oo :only<cr>
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Buffer reselection
+
+"  Select (charwise) the contents of the current line, excluding indentation.
+nnoremap vv ^vg_
+
+" Select entire buffer
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize
@@ -63,18 +75,20 @@ else
 
   " Paste
   nnoremap <silent>cv :r!xsel -o -b<cr>
- endif
+  endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 
-" Remove any introduced trailing whitespace after moving.
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
-let g:DVB_TrimWS = 1
+if exists('g:loaded_dragvirtualblocks')
+  " Remove any introduced trailing whitespace after moving.
+  vmap  <expr>  <LEFT>   DVB_Drag('left')
+  vmap  <expr>  <RIGHT>  DVB_Drag('right')
+  vmap  <expr>  <DOWN>   DVB_Drag('down')
+  vmap  <expr>  <UP>     DVB_Drag('up')
+  vmap  <expr>  D        DVB_Duplicate()
+  let g:DVB_TrimWS = 1
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Display help in vertical buffer.
@@ -95,13 +109,15 @@ nnoremap <leader>V V`]
 " -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+if exists('g:loaded_easy_align_plugin')
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
 
-" Start interactive EasyAlign in motino/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign in motino/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
 
-nmap <bar> gaip*<bar>
+  nmap <bar> gaip*<bar>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Execute the current line of text as a shell command.
@@ -111,13 +127,15 @@ noremap <leader>E !!$SHELL<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Fugitive
 
-nnoremap <leader>gp :Gpush<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gh :silent vert bo help fugitive<cr>
-nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>gP :Gpull<cr>
-nnoremap <leader>gs :Gstatus<cr>gg<c-n>
-nnoremap <leader>gD :Gvdiff<cr>
+if exists('g:loaded_fugitive')
+  nnoremap <leader>gp :Gpush<cr>
+  nnoremap <leader>gc :Gcommit<cr>
+  nnoremap <leader>gh :silent vert bo help fugitive<cr>
+  nnoremap <leader>gl :Glog<cr>
+  nnoremap <leader>gP :Gpull<cr>
+  nnoremap <leader>gs :Gstatus<cr>gg<c-n>
+  nnoremap <leader>gD :Gvdiff<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders
@@ -127,36 +145,44 @@ nnoremap <silent> <leader>ff :FZF<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ Grammarous
 
-nnoremap <leader>gC <plug>(grammarous-close-info-window)
-nnoremap <leader>ge <plug>(grammarous-move-to-next-error)
-nnoremap <leader>ge <plug>(grammarous-move-to-previous-error)
-nnoremap <leader>gF <plug>(grammarous-fixall)
-nnoremap <leader>gf <plug>(grammarous-fixit)
-nnoremap <leader>gg :GrammarousCheck<cr>
-nnoremap <leader>gM <plug>(grammarous-move-to-info-window)
-nnoremap <leader>gm <plug>(grammarous-open-info-window)
-nnoremap <leader>gR <plug>(grammarous-remove-error)
-nnoremap <leader>gr <plug>(grammarous-reset)
-nnoremap <leader>gx <plug>(grammarous-disable-rule)
+if exists('g:loaded_grammarous')
+  nnoremap <leader>gC <plug>(grammarous-close-info-window)
+  nnoremap <leader>ge <plug>(grammarous-move-to-next-error)
+  nnoremap <leader>ge <plug>(grammarous-move-to-previous-error)
+  nnoremap <leader>gF <plug>(grammarous-fixall)
+  nnoremap <leader>gf <plug>(grammarous-fixit)
+  nnoremap <leader>gg :GrammarousCheck<cr>
+  nnoremap <leader>gM <plug>(grammarous-move-to-info-window)
+  nnoremap <leader>gm <plug>(grammarous-open-info-window)
+  nnoremap <leader>gR <plug>(grammarous-remove-error)
+  nnoremap <leader>gr <plug>(grammarous-reset)
+  nnoremap <leader>gx <plug>(grammarous-disable-rule)
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ LMGTFY : Let Me Google That For You
 
-nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
-nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
-xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
-xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
+if exists('g:loaded_bundle_lmgtfy')
+  nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
+  nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
+  xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
+  xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
 
-nnoremap <leader>gi :Gissues<cr>
-nnoremap <leader>ga :Giadd<cr>
+if exists('g:loaded_bundle_lmgtfy')
+  nnoremap <leader>gi :Gissues<cr>
+  nnoremap <leader>ga :Giadd<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Helptags
 
-noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
+if exists("g:loaded_helptags")
+  noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Indent/dedent/autoindent what you just pasted.
@@ -168,17 +194,19 @@ nnoremap =- V`]=
 " ------------------------------------------------------------------------- }}}
 " {{{ incsearch.vim
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+if exists('g:loaded_incsearch')
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+  nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+  let g:incsearch#auto_nohlsearch = 1
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Insert Mode Completion
@@ -206,13 +234,16 @@ nnoremap <leader>J myvipJ`ygq<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 
-nnoremap <silent><leader>nf :NERDTreeFind<CR>
-nnoremap <silent><C-n> :NERDTreeToggle<CR>
+if exists('loaded_nerd_tree')
+  nnoremap <silent><leader>nf :NERDTreeFind<CR>
+  nnoremap <silent><C-n> :NERDTreeToggle<CR>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 
-nmap ; :
+" Disable semicolon to see if I like searching within a line using ;
+" nmap ; :
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " -------------------------------------------------------------------------- }}}
@@ -238,21 +269,12 @@ nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ rspec
 
-map <leader><leader>t :call RunCurrentSpecFile()<CR>
-map <leader><leader>s :call RunNearestSpec()<CR>
-map <leader><leader>l :call RunLastSpec()<CR>
-map <leader><leader>a :call RunAllSpecs()<CR>
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Select (charwise) the contents of the current line, excluding indentation.
-
-nnoremap vv ^vg_
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Select entire buffer
-
-nnoremap vaa ggvGg_
-nnoremap Vaa ggVG
+if !exists("g:rspec_runner")
+  map <leader><leader>t :call RunCurrentSpecFile()<CR>
+  map <leader><leader>s :call RunNearestSpec()<CR>
+  map <leader><leader>l :call RunLastSpec()<CR>
+  map <leader><leader>a :call RunAllSpecs()<CR>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Source lines
@@ -283,18 +305,20 @@ nnoremap <leader>i :set list!<cr>
 
 " Below are the suggested Tmux Runner default mappings.  I decided to explicitly
 " reference them with defaults before I start changing them.
-nnoremap <leader>rr  :VtrResizeRunner<cr>
-nnoremap <leader>ror :VtrReorientRunner<cr>
-nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
-nnoremap <leader>sf  :VtrSendFile!<cr>
-nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
-nnoremap <leader>or  :VtrOpenRunner<cr>
-nnoremap <leader>kr  :VtrKillRunner<cr>
-nnoremap <leader>fr  :VtrFocusRunner<cr>
-nnoremap <leader>dr  :VtrDetachRunner<cr>
-nnoremap <leader>ar  :VtrReattachRunner<cr>
-nnoremap <leader>cr  :VtrClearRunner<cr>
-nnoremap <leader>fc  :VtrFlushCommand<cr>
+if exists('g:loaded_bundle_tmux_runner')
+  nnoremap <leader>rr  :VtrResizeRunner<cr>
+  nnoremap <leader>ror :VtrReorientRunner<cr>
+  nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
+  nnoremap <leader>sf  :VtrSendFile!<cr>
+  nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
+  nnoremap <leader>or  :VtrOpenRunner<cr>
+  nnoremap <leader>kr  :VtrKillRunner<cr>
+  nnoremap <leader>fr  :VtrFocusRunner<cr>
+  nnoremap <leader>dr  :VtrDetachRunner<cr>
+  nnoremap <leader>ar  :VtrReattachRunner<cr>
+  nnoremap <leader>cr  :VtrClearRunner<cr>
+  nnoremap <leader>fc  :VtrFlushCommand<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Tmux Sessions
@@ -318,7 +342,7 @@ nnoremap <leader>kvim  :!tmux kill-session -t vim<cr>
 nnoremap <leader>kwork :!tmux kill-session -t work<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Toggle Post Buffer 
+" {{{ Toggle Post Buffer
 
 nnoremap <leader>pb :call TogglePostBuffer()<cr>
 
@@ -330,8 +354,8 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ Use shift-key versus control-key when I'm lazy.
 
-nnoremap B <c-b>
-nnoremap F <c-f>
+" nnoremap B <c-b>
+" nnoremap F <c-f>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug
