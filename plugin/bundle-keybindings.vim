@@ -234,10 +234,10 @@ nnoremap <leader>J myvipJ`ygq<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 
-if exists('loaded_nerd_tree')
+" if exists('loaded_nerd_tree')
   nnoremap <silent><leader>nf :NERDTreeFind<CR>
   nnoremap <silent><C-n> :NERDTreeToggle<CR>
-endif
+" endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
@@ -325,21 +325,21 @@ endif
 
 " Below are the tmux sessions I create and kill frequently.
 
-nnoremap <leader>tao   :!ao ao<cr>
-nnoremap <leader>tbash :!ao bash<cr>
-nnoremap <leader>tkjv  :!ao kjv<cr>
-nnoremap <leader>tssh  :!ao ssh<cr>
-nnoremap <leader>tsoup :!ao soup<cr>
-nnoremap <leader>tvim  :!ao vim<cr>
-nnoremap <leader>twork :!ao work<cr>
+nnoremap <silent> <leader>tao   :!ao ao<cr>
+nnoremap <silent> <leader>tbash :!ao bash<cr>
+nnoremap <silent> <leader>tkjv  :!ao kjv<cr>
+nnoremap <silent> <leader>tssh  :!ao ssh<cr>
+nnoremap <silent> <leader>tsoup :!ao soup<cr>
+nnoremap <silent> <leader>tvim  :!ao vim<cr>
+nnoremap <silent> <leader>twork :!ao work<cr>
 
-nnoremap <leader>kao   :!tmux kill-session -t ao<cr>
-nnoremap <leader>kbash :!tmux kill-session -t bash<cr>
-nnoremap <leader>kkjv  :!tmux kill-session -t kjv<cr>
-nnoremap <leader>kssh  :!tmux kill-session -t ssh<cr>
-nnoremap <leader>ksoup :!tmux kill-session -t soup<cr>
-nnoremap <leader>kvim  :!tmux kill-session -t vim<cr>
-nnoremap <leader>kwork :!tmux kill-session -t work<cr>
+nnoremap <silent> <leader>kao   :!tmux kill-session -t ao<cr>
+nnoremap <silent> <leader>kbash :!tmux kill-session -t bash<cr>
+nnoremap <silent> <leader>kkjv  :!tmux kill-session -t kjv<cr>
+nnoremap <silent> <leader>kssh  :!tmux kill-session -t ssh<cr>
+nnoremap <silent> <leader>ksoup :!tmux kill-session -t soup<cr>
+nnoremap <silent> <leader>kvim  :!tmux kill-session -t vim<cr>
+nnoremap <silent> <leader>kwork :!tmux kill-session -t work<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle Post Buffer
