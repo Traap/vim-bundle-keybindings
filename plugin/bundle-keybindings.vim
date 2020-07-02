@@ -67,15 +67,15 @@ if has('nvim')
   vnoremap <silent>cc "+y
 
   " Paste
-  nnoremap <silent>cv "+p
+  nnoremap <silent><leader>cv "+p
 else
   " Copy
   nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
   vnoremap <silent>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
 
   " Paste
-  nnoremap <silent>cv :r!xsel -o -b<cr>
-  endif
+  nnoremap <silent><leader>cv :r!xsel -o -b<cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
