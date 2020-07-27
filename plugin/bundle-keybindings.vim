@@ -17,7 +17,7 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Calender toggle
 
-nnoremap <leader>wc :call ToggleCalender()<cr> 
+nnoremap <leader>wc :call ToggleCalendar()<cr> 
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
