@@ -15,6 +15,11 @@ if exists('g:loaded_bbye')
 endif
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Calender toggle
+
+nnoremap <leader>wc :call ToggleCalender()<cr> 
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
