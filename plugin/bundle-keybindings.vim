@@ -32,12 +32,6 @@ nnoremap <leader>wr :%s/\r//g<cr>
 "Delete line
 map - dd
 
-" Save file
-" noremap s :w<cr>
-
-" Reformat lines.
-vnoremap Q gq
-
 " Substitute
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
@@ -46,7 +40,7 @@ vnoremap <c-s> :s/
 nnoremap <silent> <leader>oo :only<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Buffer reselection
+" {{{ Buffer selection
 
 "  Select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_
@@ -54,6 +48,9 @@ nnoremap vv ^vg_
 " Select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
+
+" Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize
@@ -107,11 +104,6 @@ nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_
 nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Easier linewise reselection of what you just pasted.
-
-nnoremap <leader>V V`]
-
-" -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
 
 if exists('g:loaded_easy_align_plugin')
@@ -145,7 +137,11 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders
 
-nnoremap <silent> <leader>ff :FZF<CR>
+if exists('g:loaded_bundle_fzf') 
+  nnoremap <silent> <leader>ff :FZF<CR>
+  nnoremap <silent> <leader>fg :FZF ~/git/<CR>
+  nnoremap <silent> <leader>fv :FZF ~/git/vim/<CR>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Grammarous
@@ -177,7 +173,7 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
 
-if exists('g:loaded_bundle_lmgtfy')
+if exists('g:loaded_bundle_github_issues')
   nnoremap <leader>gi :Gissues<cr>
   nnoremap <leader>ga :Giadd<cr>
 endif
