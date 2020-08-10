@@ -20,6 +20,34 @@ endif
 nnoremap <leader>wc :call ToggleCalendar()<cr> 
 
 " -------------------------------------------------------------------------- }}}
+" {{{ coc -Conquer of Completion 
+
+if exists('g:did_coc_loaded')
+  if exists('g:loaded_bundle_coc') 
+
+    inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+    " Use `[g` and `]g` to navigate diagnostics
+    " Use `:CocDiagnostics` to get all diagnostics of current buffer in location
+    " list.
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    " GoTo code navigation.
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    " Use K to show documentation in preview window.
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  endif
+endif
+" -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
