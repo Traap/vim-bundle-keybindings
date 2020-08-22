@@ -25,10 +25,11 @@ nnoremap <leader>wc :call ToggleCalendar()<cr>
 if exists('g:did_coc_loaded')
   if exists('g:loaded_bundle_coc') 
 
-    inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    " TODO: Remapping the <TAB> conflicts with vimwiki. I 
+    " inoremap <silent><expr> <TAB>
+    "   \ pumvisible() ? "\<C-n>" :
+    "   \ <SID>check_back_space() ? "\<TAB>" :
+    "   \ coc#refresh()
 
     " Use `[g` and `]g` to navigate diagnostics
     " Use `:CocDiagnostics` to get all diagnostics of current buffer in location
@@ -278,22 +279,30 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 
-nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
-nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
+" Vim files.
+nnoremap <leader>eb :e ~/git/vim/bootstrap.vim<cr>
 nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
-nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
 nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
+nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
+nnoremap <leader>en :e ~/git/vim/nvim.vim<cr>
 nnoremap <leader>ep :e ~/git/vim/plug.vim<cr>
-nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
+nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
 
+" Operating system files.
 nnoremap <leader>ma :e ~/git/dotfiles/my_aliases<cr>
+nnoremap <leader>mb :e ~/git/dotfiles/bashrc<cr>
 nnoremap <leader>mc :e ~/git/dotfiles/my_completions<cr>
 nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
 nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
 nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
 nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
+nnoremap <leader>mz :e ~/git/dotfiles/bashrc-personal<cr>
+
+" Xwindows files.
+nnoremap <leader>xb :e ~/git/dotfiles/bspwmrc<cr>
+nnoremap <leader>xs :e ~/git/dotfiles/sxhkdrc<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ rspec
