@@ -82,8 +82,7 @@ nnoremap Vaa ggVG
 nnoremap <leader>V V`]
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Buffer resize
-
+" {{{ Buffer resize 
 map <silent>\H :resize -1<cr>
 map <silent>\J :vertical resize -1<cr>
 map <silent>\K :vertical resize +1<cr>
@@ -264,10 +263,8 @@ nnoremap <leader>J myvipJ`ygq<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 
-" if exists('loaded_nerd_tree')
-  nnoremap <silent><leader>nf :NERDTreeFind<CR>
-  nnoremap <silent><C-n> :NERDTreeToggle<CR>
-" endif
+nnoremap <silent><leader>nf :NERDTreeFind<CR>
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
