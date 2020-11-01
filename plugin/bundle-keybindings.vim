@@ -150,6 +150,13 @@ endif
 noremap <leader>E !!$SHELL<cr>
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Fix Terminal 
+
+if has('nvim')
+  nnoremap <leader>ft :call FixTerminal()<cr>
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Fugitive
 
 if exists('g:loaded_fugitive')
