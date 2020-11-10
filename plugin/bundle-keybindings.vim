@@ -402,7 +402,7 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug
 
-command! PU PlugUpdate | PlugUpgrade | PlugCleanup
+command! PU PlugUpdate | PlugUpgrade | PlugClean!
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug-lookup
