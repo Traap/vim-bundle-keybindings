@@ -199,10 +199,10 @@ endif
 " {{{ LMGTFY : Let Me Google That For You
 
 if exists('g:loaded_bundle_lmgtfy')
-  nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
-  nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
-  xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
-  xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
+  nnoremap <leader>?    :call LMGTFY(expand("<cWORD>"), 0)<cr>
+  nnoremap <leader>!     :call LMGTFY(expand("<cWORD>"), 1)<cr>
+  xnoremap <leader>? "gy:call LMGTFY(@g, 0)<cr>gv
+  xnoremap <leader>! "gy:call LMGTFY(@g, 1)<cr>gv
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -402,7 +402,13 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug
 
-command! PU PlugUpdate | PlugUpgrade
+command! PU PlugUpdate | PlugUpgrade | PlugCleanup
+
+" -------------------------------------------------------------------------- }}}
+" {{{ vim-plug-lookup
+
+nnoremap <silent> <leader>pl    :call PlugLookup(expand("<cWORD>"))<cr>
+xnoremap <silent> <leader>pl "gy:call PlugLookup(@g)<cr>gv
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
