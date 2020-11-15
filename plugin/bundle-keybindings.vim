@@ -353,7 +353,7 @@ if exists('g:loaded_bundle_tmux_runner')
   nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
   nnoremap <leader>sf  :VtrSendFile!<cr>
   nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
-  nnoremap <leader>or  :VtrOpenRunner<cr>
+  nnoremap <leader>or  :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<cr>
   nnoremap <leader>kr  :VtrKillRunner<cr>
   nnoremap <leader>fr  :VtrFocusRunner<cr>
   nnoremap <leader>dr  :VtrDetachRunner<cr>
