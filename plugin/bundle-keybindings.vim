@@ -274,6 +274,13 @@ nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
 " -------------------------------------------------------------------------- }}}
+" {{{ PlantUML 
+
+if exists('g:loaded_bundle_plantuml')
+  nnoremap <silent><leader>gu :call GenerateUmlDiagram()
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 
 " Disable semicolon to see if I like searching within a line using ;
