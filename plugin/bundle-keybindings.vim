@@ -277,7 +277,7 @@ nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " {{{ PlantUML 
 
 if exists('g:loaded_bundle_plantuml')
-  nnoremap <silent><leader>gu :call GenerateUmlDiagram()
+  nnoremap <silent><leader>gu :call GenerateUmlDiagram()<cr>
 endif
 
 " -------------------------------------------------------------------------- }}}
