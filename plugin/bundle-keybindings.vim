@@ -17,7 +17,7 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Calender toggle
 
-nnoremap <leader>wc :call ToggleCalendar()<cr> 
+nnoremap <leader>cw :call ToggleCalendar()<cr> 
 
 " -------------------------------------------------------------------------- }}}
 " {{{ coc -Conquer of Completion 
