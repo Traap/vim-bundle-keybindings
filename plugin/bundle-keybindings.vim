@@ -83,13 +83,13 @@ nnoremap <leader>V V`]
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize 
-map <silent>\H :resize -1<cr>
-map <silent>\J :vertical resize -1<cr>
-map <silent>\K :vertical resize +1<cr>
-map <silent>\L :resize +1<cr>
 
-" -------------------------------------------------------------------------- }}}
-" {{{ Copy and Paste
+map <silent><a-h> :vertical resize -1<cr>
+map <silent><a-j> :resize +1<cr>
+map <silent><a-k> :resize -1<cr>
+map <silent><a-l> :vertical resize +1<cr>
+
+" -------------------------------------------------------------------------- }}} {{{ Copy and Paste
 
 if has('nvim')
   " Copy
