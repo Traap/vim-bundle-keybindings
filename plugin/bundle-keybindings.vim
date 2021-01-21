@@ -206,14 +206,6 @@ if exists('g:loaded_bundle_lmgtfy')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ github-issues
-
-if exists('g:loaded_bundle_github_issues')
-  nnoremap <leader>gi :Gissues<cr>
-  nnoremap <leader>ga :Giadd<cr>
-endif
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Helptags
 
 if exists("g:loaded_helptags")
@@ -259,6 +251,11 @@ nnoremap J mzJ`z
 
 " Join an entire paragraph
 nnoremap <leader>J myvipJ`ygq<CR>
+
+" -------------------------------------------------------------------------- }}}
+" {{{ KJV keybindings
+
+nnoremap gk 0mMvg_"ky :exec "r!kjv  -b -d -w 65" getreg("k")<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Marks and Quotes
