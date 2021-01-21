@@ -404,9 +404,15 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " nnoremap F <c-f>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim-plug
+" {{{ vim-plug and CocInstall
 
-command! PU PlugUpdate | PlugUpgrade
+command! PU PlugUpdate | 
+       \ PlugUpgrade | 
+       \ CocInstall coc-dictionary, 
+       \            coc-json, 
+       \            coc-vmitex, 
+       \            coc-wod, 
+       \            coc-yaml
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug-lookup
