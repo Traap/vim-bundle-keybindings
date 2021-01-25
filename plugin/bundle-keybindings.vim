@@ -407,13 +407,13 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " {{{ vim-plug and CocInstall
 
 command! PU PlugUpdate | 
-       \    PlugUpgradeA
+       \    PlugUpgrade
 
 command! CU CocInstall 
-       \    coc-dictionary, 
-       \    coc-json, 
-       \    coc-vmitex, 
-       \    coc-word, 
+       \    coc-dictionary
+       \    coc-json 
+       \    coc-vimtex 
+       \    coc-word 
        \    coc-yaml
 
 " -------------------------------------------------------------------------- }}}
