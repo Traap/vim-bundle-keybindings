@@ -65,7 +65,7 @@ map - dd
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
 
-" Map O to :only so that only one view is visable.
+" Make only the current window visible. 
 nnoremap <silent> <leader>oo :only<cr>
 
 " -------------------------------------------------------------------------- }}}
