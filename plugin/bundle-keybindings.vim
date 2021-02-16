@@ -255,7 +255,11 @@ nnoremap <leader>J myvipJ`ygq<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ KJV keybindings
 
+" Verse lookup.
 nnoremap gk 0mMvg_"ky :exec "r!kjv  -b -d -w 65" getreg("k")<cr>
+
+" Markdown highlights and indentation.
+vnoremap gs S*v)3>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Marks and Quotes
