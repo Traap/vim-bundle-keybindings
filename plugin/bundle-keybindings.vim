@@ -160,7 +160,7 @@ endif
 " {{{ Fugitive
 
 if exists('g:loaded_fugitive')
-  nnoremap <leader>gp :Gpush<cr>
+  nnoremap <leader>gp :Git push<cr>
   nnoremap <leader>gc :Gcommit<cr>
   nnoremap <leader>gh :silent vert bo help fugitive<cr>
   nnoremap <leader>gl :Glog<cr>
