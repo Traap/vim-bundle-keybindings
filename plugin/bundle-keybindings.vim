@@ -259,7 +259,7 @@ nnoremap <leader>J myvipJ`ygq<CR>
 nnoremap gk 0mMvg_"ky :exec "r!kjv  -b -d -w 65" getreg("k")<cr>
 
 " Markdown highlights and indentation.
-vnoremap gs S*v)3>
+vmap gs S*v)3>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Marks and Quotes
