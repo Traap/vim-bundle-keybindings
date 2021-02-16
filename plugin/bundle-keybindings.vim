@@ -161,11 +161,11 @@ endif
 
 if exists('g:loaded_fugitive')
   nnoremap <leader>gp :Git push<cr>
-  nnoremap <leader>gc :Gcommit<cr>
+  nnoremap <leader>gc :Git commit<cr>
   nnoremap <leader>gh :silent vert bo help fugitive<cr>
-  nnoremap <leader>gl :Glog<cr>
-  nnoremap <leader>gP :Gpull<cr>
-  nnoremap <leader>gs :Gstatus<cr>gg<c-n>
+  nnoremap <leader>gl :Git log<cr>
+  nnoremap <leader>gP :Git pull<cr>
+  nnoremap <leader>gs :G<cr>gg<c-n><c-n>
   nnoremap <leader>gD :Gvdiff<cr>
 endif
 
