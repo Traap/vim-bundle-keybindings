@@ -437,12 +437,25 @@ function! PlugLookup(pat)
 endfunction
 
 " -------------------------------------------------------------------------- }}}
+" {{{ ripgrep lookup 
+
+nnoremap <silent> gz 0mMvt:gf<cr>
+
+nnoremap <silent> fc "gy$:call RipgrepLookup(@g)<cr>
+xnoremap <silent> fc  "gy:call RipgrepLookup(@g)<cr>gv
+
+function! RipgrepLookup(pat)
+  let cmd = "r!rg '" . a:pat . "' . -c -i"
+  :exec cmd
+endfunction
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 
 nnoremap ]w :call Wipeout()<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Yank visually selected test and search for it in any file.
+" {{{ Yank visually selected text and search for it in any file.
 
 vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
 
