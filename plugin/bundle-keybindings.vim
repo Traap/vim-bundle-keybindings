@@ -423,8 +423,18 @@ command! CU CocInstall
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug-lookup
 
-nnoremap <silent> <leader>pl    :call PlugLookup(expand("<cWORD>"))<cr>
-xnoremap <silent> <leader>pl "gy:call PlugLookup(@g)<cr>gv
+if exists('g:loaded_plug_lookup')
+  finish
+endif
+let g:loaded_plug_lookup = 1
+
+nnoremap <silent> gx    :call PlugLookup(expand("<cWORD>"))<cr>
+xnoremap <silent> gx "gy:call PlugLookup(@g)<cr>gv
+
+function! PlugLookup(pat)
+  let url = "xdg-open https://github.com/" . a:pat . ".git"
+  call jobstart(url)
+endfunction
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
