@@ -17,15 +17,15 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Calender toggle
 
-nnoremap <leader>cw :call ToggleCalendar()<cr> 
+nnoremap <leader>cw :call ToggleCalendar()<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ coc -Conquer of Completion 
+" {{{ coc -Conquer of Completion
 
 if exists('g:did_coc_loaded')
-  if exists('g:loaded_bundle_coc') 
+  if exists('g:loaded_bundle_coc')
 
-    " TODO: Remapping the <TAB> conflicts with vimwiki. I 
+    " TODO: Remapping the <TAB> conflicts with vimwiki. I
     " inoremap <silent><expr> <TAB>
     "   \ pumvisible() ? "\<C-n>" :
     "   \ <SID>check_back_space() ? "\<TAB>" :
@@ -65,7 +65,7 @@ map - dd
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
 
-" Make only the current window visible. 
+" Make only the current window visible.
 nnoremap <silent> <leader>oo :only<cr>
 
 " -------------------------------------------------------------------------- }}}
@@ -82,7 +82,7 @@ nnoremap Vaa ggVG
 nnoremap <leader>V V`]
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Buffer resize 
+" {{{ Buffer resize
 
 map <silent><a-h> :vertical resize -1<cr>
 map <silent><a-j> :resize +1<cr>
@@ -150,7 +150,7 @@ endif
 noremap <leader>E !!$SHELL<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Fix Terminal 
+" {{{ Fix Terminal
 
 if has('nvim')
   nnoremap <leader>ft :call FixTerminal()<cr>
@@ -172,10 +172,16 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders
 
-if exists('g:loaded_bundle_fzf') 
+" Traditional FZF
+if exists('g:loaded_bundle_fzf')
   nnoremap <silent> <leader>ff :FZF<CR>
   nnoremap <silent> <leader>fg :FZF ~/git/<CR>
   nnoremap <silent> <leader>fv :FZF ~/git/vim/<CR>
+endif
+
+" Wiki.wim FZF
+if exists('g:loaded_bundle_vimwiki')
+  nnoremap <silent> <leader>fw :WikiFzfPages<cr>
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -275,7 +281,7 @@ nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ PlantUML 
+" {{{ PlantUML
 
 if exists('g:loaded_bundle_plantuml')
   nnoremap <silent><leader>gu :call GenerateUmlDiagram()<cr>
@@ -410,14 +416,14 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug and CocInstall
 
-command! PU PlugUpdate | 
+command! PU PlugUpdate |
        \    PlugUpgrade
 
-command! CU CocInstall 
+command! CU CocInstall
        \    coc-dictionary
-       \    coc-json 
-       \    coc-vimtex 
-       \    coc-word 
+       \    coc-json
+       \    coc-vimtex
+       \    coc-word
        \    coc-yaml
 
 " -------------------------------------------------------------------------- }}}
@@ -437,7 +443,7 @@ function! PlugLookup(pat)
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ ripgrep lookup 
+" {{{ ripgrep lookup
 
 nnoremap <silent> gz 0mMvt:gf<cr>
 
@@ -455,7 +461,7 @@ endfunction
 nnoremap ]w :call Wipeout()<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Yank visually selected text and search for it in any file.
+" {{{ Yank visually selected test and search for it in any file.
 
 vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
 
