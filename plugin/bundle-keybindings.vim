@@ -174,9 +174,9 @@ endif
 
 " Traditional FZF
 if exists('g:loaded_bundle_fzf')
-  nnoremap <silent> <leader>ff :FZF<CR>
-  nnoremap <silent> <leader>fg :FZF ~/git/<CR>
-  nnoremap <silent> <leader>fv :FZF ~/git/vim/<CR>
+  nnoremap <silent> <leader>ff :Files<CR>
+  nnoremap <silent> <leader>fg :Files ~/git/<CR>
+  nnoremap <silent> <leader>fv :Files ~/git/vim/<CR>
 endif
 
 " Wiki.wim FZF
