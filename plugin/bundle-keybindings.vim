@@ -304,6 +304,7 @@ nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
 nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
 nnoremap <leader>en :e ~/git/vim/nvim.vim<cr>
 nnoremap <leader>ep :e ~/git/vim/plug.vim<cr>
+nnoremap <leader>em :e ~/git/vim/minimal-plug.vim<cr>
 nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
