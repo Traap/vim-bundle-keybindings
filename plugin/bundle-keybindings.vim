@@ -61,10 +61,6 @@ nnoremap <leader>wr :%s/\r//g<cr>
 "Delete line
 map - dd
 
-" Substitute
-nnoremap <c-s> :%s/
-vnoremap <c-s> :s/
-
 " Make only the current window visible.
 nnoremap <silent> <leader>oo :only<cr>
 
@@ -356,6 +352,23 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 " {{{ Toggle [i]nvisible characters
 
 nnoremap <leader>i :set list!<cr>
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Tmux navagator
+
+" I am tired of fighting vim and neovim relative to <c-h,j,k,l> tmux-navigator
+" set.  I now set them directly.
+"
+if exists('g:loaded_tmux_navigator')
+
+ let g:tmux_navigator_no_mappings = 1
+ nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Tmux Runner
