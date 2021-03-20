@@ -462,26 +462,31 @@ endfunction
 nnoremap <silent> gz 0mMvt:gf<cr>
 
 nnoremap <silent> fc "gy$:call RipgrepLookup(@g)<cr>
-xnoremap <silent> fc  "gy:call RipgrepLookup(@g)<cr>gv
+xnoremap <silent> fc "gy: call RipgrepLookup(@g)<cr>gv
 
-function! RipgrepLookup(pat)
-  let cmd = "r!rg '" . a:pat . "' . -c -i"
-  :exec cmd
+" https://github.com/alejandrogallo/vim-ripgrep
+function! RipgrepLookup(...)
+
+  let l:list = split(system("rg --vimgrep " . join(a:000, " ")), "\n")
+
+  let l:ql = []
+
+  for l:item in l:list
+    let sit = split(l:item, ":")
+    call add(l:ql,
+        \ {"filename": sit[0], "lnum": sit[1], "col": sit[2], "text": sit[3]})
+  endfor
+
+  call setqflist(l:ql, 'r')
+
+  echo 'Rg results: '.len(l:ql)
+
 endfunction
+command! -nargs=* Xg call Xg(<q-args>)
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 
 nnoremap ]w :call Wipeout()<cr>
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Yank visually selected test and search for it in any file.
-
-vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
-
-" ------------------------------------------------------------------------- }}}
-" {{{ Zoom to head level.
-
-nnoremap zh mzzt10<c-u>
 
 " -------------------------------------------------------------------------- }}}
