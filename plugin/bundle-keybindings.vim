@@ -51,9 +51,9 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-nnoremap <leader>wo :%bwipeout<cr>
-nnoremap <leader>wr :%s/\r//g<cr>
+nnoremap silent <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+nnoremap silent <leader>wo :%bwipeout<cr>
+nnoremap silent <leader>wr :%s/\r//g<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Delete line and more
@@ -475,6 +475,6 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 
-nnoremap ]w :call Wipeout()<cr>
+nnoremap silent ]w :call Wipeout()<cr>
 
 " -------------------------------------------------------------------------- }}}
