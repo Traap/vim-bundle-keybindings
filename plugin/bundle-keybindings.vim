@@ -349,6 +349,14 @@ vnoremap <leader>u :sort u<cr>
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Telescope command-line sugar. 
+
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+nnoremap <leader>tb <cmd>Telescope buffers<cr>
+nnoremap <leader>th <cmd>Telescope help_tags<cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Toggle [i]nvisible characters
 
 nnoremap <leader>i :set list!<cr>
