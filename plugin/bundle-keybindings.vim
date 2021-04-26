@@ -89,15 +89,15 @@ map <silent><a-l> :vertical resize +1<cr>
 
 if has('nvim')
   " Copy
-  nnoremap <silent>cc ggVGg_"+y        " See vaa keybindings below.
-  vnoremap <silent>cc "+y
+  nnoremap <silent><leader>cc ggVGg_"+y        " See vaa keybindings below.
+  vnoremap <silent><leader>cc "+y
 
   " Paste
   nnoremap <silent><leader>cv "+p
 else
   " Copy
-  nnoremap <silent>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
-  vnoremap <silent>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
+  nnoremap <silent><leader>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
+  vnoremap <silent><leader>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
 
   " Paste
   nnoremap <silent><leader>cv :r!xsel -o -b<cr>
