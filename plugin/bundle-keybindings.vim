@@ -80,10 +80,10 @@ nnoremap <leader>V V`]
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer resize
 
-map <silent><a-h> :vertical resize -1<cr>
-map <silent><a-j> :resize +1<cr>
-map <silent><a-k> :resize -1<cr>
-map <silent><a-l> :vertical resize +1<cr>
+map <silent><a-H> :vertical resize -1<cr>
+map <silent><a-J> :resize +1<cr>
+map <silent><a-K> :resize -1<cr>
+map <silent><a-L> :vertical resize +1<cr>
 
 " -------------------------------------------------------------------------- }}} {{{ Copy and Paste
 
