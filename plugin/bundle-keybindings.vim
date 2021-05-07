@@ -320,6 +320,14 @@ nnoremap <leader>xb :e ~/git/dotfiles/bspwmrc<cr>
 nnoremap <leader>xs :e ~/git/dotfiles/sxhkdrc<cr>
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Ripgrep recursive search.
+
+" Use Ripgrep to perform a recursive case insensitive file search
+" for any file contining the information on the current line.
+
+nnoremap gr 0mMvg_"ky :exec "r!rg '" . getreg("k") . "' -i ." <cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ rspec
 
 if !exists("g:rspec_runner")
@@ -355,6 +363,19 @@ nnoremap <leader>tf <cmd>Telescope find_files<cr>
 nnoremap <leader>tg <cmd>Telescope live_grep<cr>
 nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
+
+" -------------------------------------------------------------------------- }}}
+" {{{ ThePrimeagen : Clear registers 
+
+nnoremap <silent> <leader>xr    :call EmptyRegisters()<cr> 
+function! EmptyRegisters()
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+    for r in regs
+        call setreg(r, [])
+    endfor
+    echo "Registers cleared."
+endfun
+
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle [i]nvisible characters
