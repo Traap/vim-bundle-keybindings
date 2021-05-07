@@ -477,8 +477,8 @@ if exists('g:loaded_plug_lookup')
 endif
 let g:loaded_plug_lookup = 1
 
-nnoremap <silent> gx    :call PlugLookup(expand("<cWORD>"))<cr>
-xnoremap <silent> gx "gy:call PlugLookup(@g)<cr>gv
+nnoremap <silent> <leader>gx    :call PlugLookup(expand("<cWORD>"))<cr>
+xnoremap <silent> <leader>gx "gy:call PlugLookup(@g)<cr>gv
 
 function! PlugLookup(pat)
   let url = "xdg-open https://github.com/" . a:pat . ".git"
