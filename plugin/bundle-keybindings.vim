@@ -198,6 +198,14 @@ if exists('g:loaded_grammarous')
 endif
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Use gX instead of gx. 
+
+" https://thevaluable.dev/vim-advanced/
+
+nnoremap gX :silent :execute
+            \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ LMGTFY : Let Me Google That For You
 
 if exists('g:loaded_bundle_lmgtfy')
