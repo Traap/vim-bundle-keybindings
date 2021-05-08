@@ -432,21 +432,21 @@ endif
 
 " Below are the tmux sessions I create and kill frequently.
 
-nnoremap <silent> <leader>tao   :!ao ao<cr>
-nnoremap <silent> <leader>tbash :!ao bash<cr>
-nnoremap <silent> <leader>tkjv  :!ao kjv<cr>
-nnoremap <silent> <leader>tssh  :!ao ssh<cr>
-nnoremap <silent> <leader>tsoup :!ao soup<cr>
-nnoremap <silent> <leader>tvim  :!ao vim<cr>
-nnoremap <silent> <leader>twork :!ao work<cr>
+nnoremap <silent> <leader>tao   :Dispatch!ao ao<cr>
+nnoremap <silent> <leader>tbash :Dispatch!ao bash<cr>
+nnoremap <silent> <leader>tkjv  :Dispatch!ao kjv<cr>
+nnoremap <silent> <leader>tssh  :Dispatch!ao ssh<cr>
+nnoremap <silent> <leader>tsoup :Dispatch!ao soup<cr>
+nnoremap <silent> <leader>tvim  :Dispatch!ao vim<cr>
+nnoremap <silent> <leader>twork :Dispatch!ao work<cr>
 
-nnoremap <silent> <leader>kao   :!tmux kill-session -t ao<cr>
-nnoremap <silent> <leader>kbash :!tmux kill-session -t bash<cr>
-nnoremap <silent> <leader>kkjv  :!tmux kill-session -t kjv<cr>
-nnoremap <silent> <leader>kssh  :!tmux kill-session -t ssh<cr>
-nnoremap <silent> <leader>ksoup :!tmux kill-session -t soup<cr>
-nnoremap <silent> <leader>kvim  :!tmux kill-session -t vim<cr>
-nnoremap <silent> <leader>kwork :!tmux kill-session -t work<cr>
+nnoremap <silent> <leader>kao   :Dispatch!tmux kill-session -t ao<cr>
+nnoremap <silent> <leader>kbash :Dispatch!tmux kill-session -t bash<cr>
+nnoremap <silent> <leader>kkjv  :Dispatch!tmux kill-session -t kjv<cr>
+nnoremap <silent> <leader>kssh  :Dispatch!tmux kill-session -t ssh<cr>
+nnoremap <silent> <leader>ksoup :Dispatch!tmux kill-session -t soup<cr>
+nnoremap <silent> <leader>kvim  :Dispatch!tmux kill-session -t vim<cr>
+nnoremap <silent> <leader>kwork :Dispatch!tmux kill-session -t work<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle Post Buffer
