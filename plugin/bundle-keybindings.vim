@@ -124,8 +124,9 @@ nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Docbld
 
-nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
-nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
+nnoremap <leader>tl :silent Dispatch docbld list_files 
+nnoremap <leader>tb :silent Dispatch docbld
+nnoremap <leader>tx :silent Dispatch docbld texx 
 
 " -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
@@ -210,7 +211,7 @@ nnoremap gX :silent :execute
 
 if exists('g:loaded_bundle_lmgtfy')
   nnoremap <leader>?    :call LMGTFY(expand("<cWORD>"), 0)<cr>
-  nnoremap <leader>!     :call LMGTFY(expand("<cWORD>"), 1)<cr>
+  nnoremap <leader>!    :call LMGTFY(expand("<cWORD>"), 1)<cr>
   xnoremap <leader>? "gy:call LMGTFY(@g, 0)<cr>gv
   xnoremap <leader>! "gy:call LMGTFY(@g, 1)<cr>gv
 endif
