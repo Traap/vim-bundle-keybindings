@@ -124,9 +124,9 @@ nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Docbld
 
-nnoremap <leader>tl :silent Dispatch docbld list_files 
-nnoremap <leader>tb :silent Dispatch docbld
-nnoremap <leader>tx :silent Dispatch docbld texx 
+nnoremap <leader>tl :silent Dispatch docbld list_files<cr>
+nnoremap <leader>tb :silent Dispatch docbld<cr>
+nnoremap <leader>tx :silent Dispatch docbld texx<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
