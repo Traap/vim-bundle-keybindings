@@ -511,6 +511,13 @@ function! RipgrepLookup(...)
 endfunction
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Wiki.vim  
+
+nnoremap <leader>wv :silent :execute '!'g:traap_pdf_viewer g:wiki_root . '/printed/' . expand('%:p:t:r') .'.pdf' . '&' <cr>
+
+nnoremap silent <leader>wv :WikiJournal<cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 
 nnoremap silent ]w :call Wipeout()<cr>
