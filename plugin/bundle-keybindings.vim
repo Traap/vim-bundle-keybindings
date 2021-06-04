@@ -6,6 +6,13 @@ endif
 let g:loaded_bundle_keybindings=1
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Leader
+
+let g:mapleader = ","
+let maplocalleader = ","
+set timeoutlen=200                                   " Leader key timeout.
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Bbye (Buffer Bye) for Vim
 
 if exists('g:loaded_bbye')
