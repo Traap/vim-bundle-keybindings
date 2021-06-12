@@ -8,8 +8,8 @@ let g:loaded_bundle_keybindings=1
 " -------------------------------------------------------------------------- }}}
 " {{{ Leader
 
-let g:mapleader = ","
-let maplocalleader = ","
+let g:mapleader = " "
+let maplocalleader = " "
 set timeoutlen=200                                   " Leader key timeout.
 
 " -------------------------------------------------------------------------- }}}
