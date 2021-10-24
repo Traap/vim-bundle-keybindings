@@ -22,11 +22,6 @@ if exists('g:loaded_bbye')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Calender toggle
-
-nnoremap <leader>cw :call ToggleCalendar()<cr>
-
-" -------------------------------------------------------------------------- }}}
 " {{{ coc -Conquer of Completion
 
 if exists('g:did_coc_loaded')
@@ -161,6 +156,21 @@ if has('nvim')
 endif
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Fold navigation 
+
+" Author: Karl Yngve Lervåg
+" See: https://github.com/lervag/dotnvim
+
+" Close all fold except the current one.
+nnoremap zv zMzvzz
+
+" Close current fold when open. Always open next fold.
+nnoremap zj zcjzOzz
+
+" Close current fold when open. Always open previous fold.
+nnoremap zk zckzOzz
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Fugitive
 
 if exists('g:loaded_fugitive')
@@ -206,7 +216,7 @@ if exists('g:loaded_grammarous')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Use gX instead of gx. 
+" {{{ Use gX instead of gx.
 
 " https://thevaluable.dev/vim-advanced/
 
@@ -373,7 +383,7 @@ vnoremap <leader>u :sort u<cr>
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Telescope command-line sugar. 
+" {{{ Telescope command-line sugar.
 
 nnoremap <leader>tf <cmd>Telescope find_files<cr>
 nnoremap <leader>tg <cmd>Telescope live_grep<cr>
@@ -381,9 +391,9 @@ nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ ThePrimeagen : Clear registers 
+" {{{ ThePrimeagen : Clear registers
 
-nnoremap <silent> <leader>xr    :call EmptyRegisters()<cr> 
+nnoremap <silent> <leader>xr    :call EmptyRegisters()<cr>
 function! EmptyRegisters()
     let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
     for r in regs
@@ -513,12 +523,12 @@ xnoremap <silent> fc "gy: call RipgrepLookup(@g)<cr>gv
 " showing inserting information into a quick list.
 
 function! RipgrepLookup(...)
-  let l:cmd = 'Rg ' . join(a:000, ' ') . ' -i .' 
+  let l:cmd = 'Rg ' . join(a:000, ' ') . ' -i .'
   execute l:cmd
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Wiki.vim  
+" {{{ Wiki.vim
 
 nnoremap <leader>wv :silent :execute '!'g:traap_pdf_viewer g:wiki_root . '/printed/' . expand('%:p:t:r') .'.pdf' . '&' <cr>
 
