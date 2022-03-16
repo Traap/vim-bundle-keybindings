@@ -156,7 +156,7 @@ if has('nvim')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Fold navigation 
+" {{{ Fold navigation
 
 " Author: Karl Yngve Lervåg
 " See: https://github.com/lervag/dotnvim
@@ -412,7 +412,7 @@ nnoremap <leader>i :set list!<cr>
 " {{{ Tmux navagator
 
 " I am tired of fighting vim and neovim relative to <c-h,j,k,l> tmux-navigator
-" set.  I now set them directly.
+" I now set them directly.
 "
 if exists('g:loaded_tmux_navigator')
 
@@ -515,7 +515,6 @@ endfunction
 " {{{ ripgrep lookup
 
 nnoremap <silent> gz 0mMvt:gf<cr>
-
 nnoremap <silent> fc "gy$:call RipgrepLookup(@g)<cr>
 xnoremap <silent> fc "gy: call RipgrepLookup(@g)<cr>gv
 
