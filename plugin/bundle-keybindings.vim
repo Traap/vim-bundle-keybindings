@@ -89,21 +89,12 @@ map <silent><a-L> :vertical resize +1<cr>
 
 " -------------------------------------------------------------------------- }}} {{{ Copy and Paste
 
-if has('nvim')
-  " Copy
-  nnoremap <silent><leader>cc ggVGg_"+y        " See vaa keybindings below.
-  vnoremap <silent><leader>cc "+y
+" Copy
+nnoremap <silent><leader>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
+vnoremap <silent><leader>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
 
-  " Paste
-  nnoremap <silent><leader>cv "+p
-else
-  " Copy
-  nnoremap <silent><leader>cc ggVGg_:!xsel --nodetach -i -b<cr>:normal u<cr>
-  vnoremap <silent><leader>cc :!xsel --nodetach -i -b<cr>:normal u<cr>
-
-  " Paste
-  nnoremap <silent><leader>cv :r!xsel -o -b<cr>
-endif
+" Paste
+nnoremap <silent><leader>cv :r!xsel -o -b<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
@@ -147,13 +138,6 @@ endif
 " {{{ Execute the current line of text as a shell command.
 
 noremap <leader>E !!$SHELL<cr>
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Fix Terminal
-
-if has('nvim')
-  nnoremap <leader>ft :call FixTerminal()<cr>
-endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Fold navigation
@@ -381,14 +365,6 @@ vnoremap <leader>u :sort u<cr>
 
 " The normal use of S is covered by cc, so don't worry about shadowing it.
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Telescope command-line sugar.
-
-nnoremap <leader>tf <cmd>Telescope find_files<cr>
-nnoremap <leader>tg <cmd>Telescope live_grep<cr>
-nnoremap <leader>tb <cmd>Telescope buffers<cr>
-nnoremap <leader>th <cmd>Telescope help_tags<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ ThePrimeagen : Clear registers
