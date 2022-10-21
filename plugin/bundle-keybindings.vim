@@ -285,6 +285,7 @@ vmap gs S*v)3>
 
 nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
+nnoremap <silent><C-q> :qall!<CR>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ PlantUML
