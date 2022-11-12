@@ -349,6 +349,12 @@ if !exists("g:rspec_runner")
 endif
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Stay in visual select mode.
+
+vnoremap > >gv
+vnoremap < <gv
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Source lines
 
 vnoremap <leader>S y:@"<CR>
