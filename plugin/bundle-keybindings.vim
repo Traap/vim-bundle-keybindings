@@ -66,6 +66,7 @@ map - dd
 " Make only the current window visible.
 nnoremap <silent> <leader>oo :only<cr>
 
+nnoremap <silent> <f3> mmggg?G`m
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer selection
 
