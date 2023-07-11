@@ -271,35 +271,6 @@ endif
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Quick editing of my personalization files.
-
-" Vim files.
-nnoremap <leader>eb :e ~/git/vim/bootstrap.vim<cr>
-nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
-nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
-nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
-nnoremap <leader>en :e ~/git/vim/nvim.vim<cr>
-nnoremap <leader>ep :e ~/git/vim/plug.vim<cr>
-nnoremap <leader>em :e ~/git/vim/minimal-plug.vim<cr>
-nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>.  :e.<cr>
-
-" Operating system files.
-nnoremap <leader>ma :e ~/git/dotfiles/my_aliases<cr>
-nnoremap <leader>mb :e ~/git/dotfiles/bashrc<cr>
-nnoremap <leader>mc :e ~/git/dotfiles/my_completions<cr>
-nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
-nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
-nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
-nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
-nnoremap <leader>mz :e ~/git/dotfiles/bashrc-personal<cr>
-
-" Xwindows files.
-nnoremap <leader>xb :e ~/git/dotfiles/bspwmrc<cr>
-nnoremap <leader>xs :e ~/git/dotfiles/sxhkdrc<cr>
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Ripgrep recursive search.
 
 " Use Ripgrep to perform a recursive case insensitive file search
