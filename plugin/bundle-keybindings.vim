@@ -1,11 +1,3 @@
-" {{{ bundle-keybindings.vim
-
-if exists('g:loaded_bundle_keybindings')
-  finish
-endif
-let g:loaded_bundle_keybindings=1
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Leader
 
 let g:mapleader = " "
@@ -452,7 +444,7 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ Wiki.vim
 
-if exists('g:loaded_bundle_vimwiki')
+if exists('g:loaded_bundle_wiki_vim')
   nnoremap <silent> <leader>wa <cmd>edit ${WIKIHOME}/journal/Acronyms.md<cr>
   nnoremap <silent> <leader>wb <cmd>edit ${WIKIHOME}/journal/Backlog.md<cr>
   nnoremap <silent> <leader>we <cmd>WikiExport<cr>
