@@ -38,6 +38,7 @@ map - dd
 nnoremap <silent> <leader>oo :only<cr>
 
 nnoremap <silent> <f3> mmggg?G`m
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer selection
 
@@ -147,11 +148,6 @@ if exists('g:loaded_bundle_fzf')
   nnoremap <silent> <leader>ff :Files<CR>
   nnoremap <silent> <leader>fg :Files ~/git/<CR>
   nnoremap <silent> <leader>fv :Files ~/git/vim/<CR>
-endif
-
-" Wiki.wim FZF
-if exists('g:loaded_bundle_vimwiki')
-  nnoremap <silent> <leader>fw :WikiFzfPages<cr>
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -485,9 +481,15 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ Wiki.vim
 
-nnoremap <leader>wv :silent :execute '!'g:traap_pdf_viewer g:wiki_root . '/printed/' . expand('%:p:t:r') .'.pdf' . '&' <cr>
-
-nnoremap silent <leader>wv :WikiJournal<cr>
+if exists('g:loaded_bundle_vimwiki')
+  nnoremap <silent> <leader>wa <cmd>edit ${WIKIHOME}/journal/Acronyms.md<cr>
+  nnoremap <silent> <leader>wb <cmd>edit ${WIKIHOME}/journal/Backlog.md<cr>
+  nnoremap <silent> <leader>we <cmd>WikiExport<cr>
+  nnoremap <silent> <leader>wi <cmd>WikiIndex<cr>
+  nnoremap <silent> <leader>wj <cmd>WikiJournal<cr>
+  nnoremap <silent> <leader>wp <cmd>WikiFzfPages<cr>
+  nnoremap <silent> <leader>wv <cmd>execute '!'g:traap_pdf_viewer g:wiki_root . '/printed/' . expand('%:p:t:r') .'.pdf' . '&' <cr>
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
