@@ -451,9 +451,9 @@ if exists('g:loaded_bundle_wiki_vim')
   nnoremap <silent> <leader>wi <cmd>WikiIndex<cr>
   nnoremap <silent> <leader>wj <cmd>WikiJournal<cr>
   nnoremap <silent> <leader>wp <cmd>WikiFzfPages<cr>
-  nnoremap <silent> <leader>wv <cmd>execute '!'
-        \  g:traap_pdf_viewer g:wiki_root . '/printed/' .
-        \  expand('%:p:t:r') . '.pdf' . '&' <cr>
+  nnoremap <silent> <leader>wv <cmd>silent execute '!'
+         \ g:traap_pdf_viewer.' '.WikiRoot().'/printed/'
+         \ .fnameescape(expand('%:p:t:r')).'.pdf &'<cr>
 endif
 
 " -------------------------------------------------------------------------- }}}
