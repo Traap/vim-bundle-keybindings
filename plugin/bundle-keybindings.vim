@@ -96,7 +96,7 @@ if exists('g:loaded_easy_align_plugin')
   " Start interactive EasyAlign in motino/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-  nmap <bar> gaip*<bar>
+  nmap silent <bar> gaip*<bar>
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -138,8 +138,8 @@ endif
 " Traditional FZF
 if exists('g:loaded_bundle_fzf')
   nnoremap <silent> <leader>ff :Files<CR>
-  nnoremap <silent> <leader>fg :Files ~/git/<CR>
-  nnoremap <silent> <leader>fv :Files ~/git/vim/<CR>
+  nnoremap <silent> <leader>fg :Files $GITHOME/<CR>
+  nnoremap <silent> <leader>fv :Files $GITHOME/vim/<CR>
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -252,7 +252,8 @@ nnoremap <leader>qq :qall!<CR>
 " {{{ PlantUML
 
 if exists('g:loaded_bundle_plantuml')
-  nnoremap <silent><leader>gu :call GenerateUmlDiagram()<cr>
+  nnoremap <silent><leader>gu :call PlantUmlAssemble()<cr>
+  nnoremap <silent><leader>gv :call PlantUmlView()<cr>
 endif
 
 " -------------------------------------------------------------------------- }}}
